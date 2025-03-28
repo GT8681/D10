@@ -126,8 +126,8 @@ function deleteOne(str, removeFirst) {
   }
 }
 
-console.log(deleteOne("Epicode", true));  // Output: "picode"
-console.log(deleteOne("Epicode", false)); // Output: "Epico"
+console.log(deleteOne("Epicode", true)); 
+console.log(deleteOne("Epicode", false));
 
 /* ESERCIZIO 5
   Crea una funzione chiamata "onlyLetters" che riceve una stringa come parametro e la ritorna eliminando tutte le cifre numeriche.
@@ -135,13 +135,38 @@ console.log(deleteOne("Epicode", false)); // Output: "Epico"
   Es.: onlyLetters("I have 4 dogs") => ritorna "I have dogs"
 */
 
+function onlyLetters(str) {
+  return str.replace(/[0-9]/g, ''); 
+}
+
+console.log(onlyLetters("io ho 44 anni")); // Output: "I have dogs"
+
 /* ESERCIZIO 6
   Crea una funzione chiamata "isThisAnEmail" che riceve una stringa come parametro e ritorna true se la stringa è un valido indirizzo email.
 */
+function isThisAnEmail(email) {
+  return email.includes("@") && email.includes(".");
+}
+
+console.log(isThisAnEmail("gidndnd@hjabjdb@wbvwbv.com")); 
+console.log(isThisAnEmail("jwnvjnvjw.it"));    
+console.log(isThisAnEmail("test@com"));        
+console.log(isThisAnEmail("test.com"));         
+
+
+
 
 /* ESERCIZIO 7
   Scrivi una funzione chiamata "whatDayIsIt" che ritorna il giorno della settimana corrente.
 */
+function whatDayIsIt() {
+  const daysOfWeek = ["Domenica", "Lunedì", "Martedì", "Mercoledì", "Giovedì", "Venerdì", "Sabato"];
+  const today = new Date().getDay(); 
+  return daysOfWeek[today];
+}
+
+console.log(whatDayIsIt()); 
+
 
 /* ESERCIZIO 8
   Scrivi una funzione chiamata "rollTheDices" che riceve un numero come parametro.
@@ -164,6 +189,18 @@ console.log(deleteOne("Epicode", false)); // Output: "Epico"
   Scrivi una funzione chiamata "isTodayMyBirthday" che deve ritornare true se oggi è il tuo compleanno, falso negli altri casi.
 */
 
+function isTodayMyBirthday() {
+  const today = new Date();
+  const myBirthday = { day: 24, month: 9 }; 
+
+  return today.getDate() === myBirthday.day && (today.getMonth() + 1)
+}
+
+console.log(isTodayMyBirthday()); 
+
+
+
+
 // Arrays & Oggetti
 
 // NOTA: l'array "movies" usato in alcuni esercizi è definito alla fine di questo file
@@ -177,21 +214,67 @@ console.log(deleteOne("Epicode", false)); // Output: "Epico"
   Scrivi una funzione chiamata "newestMovie" che trova il film più recente nell'array "movies" fornito.
 */
 
+
+
+
+
+
+//console.log(newestMovie(movies)); 
+
 /* ESERCIZIO 13
   Scrivi una funzione chiamata countMovies che ritorna il numero di film contenuti nell'array "movies" fornito.
 */
 
+
+function countMovies(movies) {
+  return movies.length;
+}
+
+
+//console.log(countMovies(movies)); 
+
+
 /* ESERCIZIO 14
   Scrivi una funzione chiamata "onlyTheYears" che crea un array con solamente gli anni di uscita dei film contenuti nell'array "movies" fornito.
 */
+function onlyTheYears(movies) {
+  return movies.map(movie => movie.Year); 
+}
+
+
+//console.log(onlyTheYears(movies)); 
+
+
+
 
 /* ESERCIZIO 15
   Scrivi una funzione chiamata "onlyInLastMillennium" che ritorna solamente i film prodotto nel millennio scorso contenuti nell'array "movies" fornito.
 */
 
+function onlyInLastMillennium(movies) {
+  return movies.filter(movie => parseInt(movie.Year) < 2000); 
+}
+
+
+//console.log(onlyInLastMillennium(movies));
+
+
+
 /* ESERCIZIO 16
   Scrivi una funzione chiamata "sumAllTheYears" che ritorna la somma di tutti gli anni in cui sono stati prodotti i film contenuti nell'array "movies" fornito.
 */
+function sumAllTheYears(movies) {
+  let total = 0;
+  for (let i = 0; i < movies.length; i++) {
+    totaleAnno += parseInt(movies[i].Year); 
+  }
+  return totaleAnno;
+}
+
+
+//console.log(sumAllTheYears(movies)); // Output: Somma di tutti gli anni
+
+
 
 /* ESERCIZIO 17
   Scrivi una funzione chiamata "searchByTitle" che riceve una stringa come parametro e ritorna i film nell'array "movies" fornito che la contengono nel titolo.
@@ -205,6 +288,9 @@ console.log(deleteOne("Epicode", false)); // Output: "Epico"
 /* ESERCIZIO 19
   Scrivi una funzione chiamata "removeIndex" che riceve un numero come parametro e ritorna l'array "movies" fornito privo dell'elemento nella posizione ricevuta come parametro.
 */
+
+
+
 
 // DOM (nota: gli elementi che selezionerai non si trovano realmente nella pagina)
 
@@ -236,6 +322,9 @@ console.log(deleteOne("Epicode", false)); // Output: "Epico"
   Scrivi una funzione per aggiungere ad ogni tag <tr> la classe CSS "test"
 */
 
+
+
+
 // [EXTRA] JS Avanzato
 
 /* ESERCIZIO 27
@@ -265,6 +354,8 @@ console.log(deleteOne("Epicode", false)); // Output: "Epico"
 /* ESERCIZIO 29
   Crea una funzione chiamata "isItPrime" che riceve un numero come parametro e ritorna true se il numero fornito è un numero primo.
 */
+
+
 
 /* Questo array viene usato per gli esercizi. Non modificarlo. */
 

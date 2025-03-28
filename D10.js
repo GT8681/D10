@@ -184,19 +184,23 @@ console.log(whatDayIsIt());
 /* ESERCIZIO 9
   Scrivi una funzione chiamata "howManyDays" che riceve una data come parametro e ritorna il numero di giorni trascorsi da tale data.
 */
+    function howManyDays(){
+     
+}
+
 
 /* ESERCIZIO 10
   Scrivi una funzione chiamata "isTodayMyBirthday" che deve ritornare true se oggi è il tuo compleanno, falso negli altri casi.
 */
 
-function isTodayMyBirthday() {
-  const today = new Date();
-  const myBirthday = { day: 24, month: 9 }; 
+       function isTodayMyBirthday() {
+       const today = new Date();
+       const myBirthday = { day: 24, month: 9 }; 
 
-  return today.getDate() === myBirthday.day && (today.getMonth() + 1)
+      return today.getDate() === myBirthday.day && (today.getMonth() + 1)
 }
 
-console.log(isTodayMyBirthday()); 
+    console.log(isTodayMyBirthday()); 
 
 
 
@@ -205,10 +209,15 @@ console.log(isTodayMyBirthday());
 
 // NOTA: l'array "movies" usato in alcuni esercizi è definito alla fine di questo file
 
+
+
 /* ESERCIZIO 11
   Scrivi una funzione chiamata "deleteProp" che riceve un oggetto e una stringa come parametri; deve ritornare l'oggetto fornito dopo aver eliminato
   in esso la proprietà chiamata come la stringa passata come secondo parametro.
 */
+
+
+
 
 /* ESERCIZIO 12
   Scrivi una funzione chiamata "newestMovie" che trova il film più recente nell'array "movies" fornito.
@@ -222,15 +231,7 @@ function newestMovie() {
   }
   return film;
 }
-
-
 console.log(newestMovie()); 
-
-
-
-
-
-
 
 /* ESERCIZIO 13
   Scrivi una funzione chiamata countMovies che ritorna il numero di film contenuti nell'array "movies" fornito.
@@ -242,7 +243,7 @@ function countMovies(movies) {
 }
 
 
-//console.log(countMovies(movies)); 
+console.log(countMovies(movies)); 
 
 
 /* ESERCIZIO 14
@@ -253,7 +254,7 @@ function onlyTheYears(movies) {
 }
 
 
-//console.log(onlyTheYears(movies)); 
+console.log(onlyTheYears(movies)); 
 
 
 
@@ -291,7 +292,7 @@ function sumAllTheYears(movies) {
   Scrivi una funzione chiamata "searchByTitle" che riceve una stringa come parametro e ritorna i film nell'array "movies" fornito che la contengono nel titolo.
 */
 
-  /* function searchByTitle(nomeTitle) {
+  function searchByTitle(nomeTitle) {
     const result = [];
      for (let i = 0; i < movies.length; i++) {
       if (movies[i].Title.toLowerCase().includes(nomeTitle.toLowerCase())) {
@@ -313,7 +314,7 @@ function sumAllTheYears(movies) {
 /* ESERCIZIO 19
   Scrivi una funzione chiamata "removeIndex" che riceve un numero come parametro e ritorna l'array "movies" fornito privo dell'elemento nella posizione ricevuta come parametro.
 */
-  /* function removeIndex(indice) {
+   function removeIndex(indice) {
     const moviesCopy = [...movies]; 
      moviesCopy.splice(indice, 1); 
      return moviesCopy; 

@@ -213,13 +213,24 @@ console.log(isTodayMyBirthday());
 /* ESERCIZIO 12
   Scrivi una funzione chiamata "newestMovie" che trova il film più recente nell'array "movies" fornito.
 */
+function newestMovie() {
+  let film = movies[0]; 
+  for (let i = 1; i < movies.length; i++) {
+    if (parseInt(movies[i].Year) > parseInt(film.Year)) {
+      film = movies[i]; 
+    }
+  }
+  return film;
+}
+
+
+console.log(newestMovie()); 
 
 
 
 
 
 
-//console.log(newestMovie(movies)); 
 
 /* ESERCIZIO 13
   Scrivi una funzione chiamata countMovies che ritorna il numero di film contenuti nell'array "movies" fornito.
@@ -272,13 +283,27 @@ function sumAllTheYears(movies) {
 }
 
 
-//console.log(sumAllTheYears(movies)); // Output: Somma di tutti gli anni
+//console.log(sumAllTheYears(movies)); 
 
 
 
 /* ESERCIZIO 17
   Scrivi una funzione chiamata "searchByTitle" che riceve una stringa come parametro e ritorna i film nell'array "movies" fornito che la contengono nel titolo.
 */
+
+  /* function searchByTitle(nomeTitle) {
+    const result = [];
+     for (let i = 0; i < movies.length; i++) {
+      if (movies[i].Title.toLowerCase().includes(nomeTitle.toLowerCase())) {
+       result.push(movies[i]); 
+     }
+   }
+     return result;
+   }
+
+     console.log(searchByTitle("Lord")); 
+
+
 
 /* ESERCIZIO 18
   Scrivi una funzione chiamata "searchAndDivide" che riceve una stringa come parametro e ritorna un oggetto contenente due array: "match" e "unmatch".
@@ -288,6 +313,14 @@ function sumAllTheYears(movies) {
 /* ESERCIZIO 19
   Scrivi una funzione chiamata "removeIndex" che riceve un numero come parametro e ritorna l'array "movies" fornito privo dell'elemento nella posizione ricevuta come parametro.
 */
+  /* function removeIndex(indice) {
+    const moviesCopy = [...movies]; 
+     moviesCopy.splice(indice, 1); 
+     return moviesCopy; 
+    }
+
+ 
+     console.log(removeIndex(6)); 
 
 
 
@@ -297,30 +330,93 @@ function sumAllTheYears(movies) {
 /* ESERCIZIO 20
   Scrivi una funzione per selezionare l'elemento dotato di id "container" all'interno della pagina.
 */
+function selectContainer() {
+  return document.getElementById("container");
+}
+
+console.log(container);
+
+
 
 /* ESERCIZIO 21
   Scrivi una funzione per selezionare ogni tag <td> all'interno della pagina.
 */
 
+function selectAllTd() {
+  return document.querySelectorAll("td");
+}
+
+
+
+console.log(selectAllTd()); 
+
+
 /* ESERCIZIO 22
   Scrivi una funzione che, tramite un ciclo, stampa in console il testo contenuto in ogni tag <td> all'interno della pagina.
 */
+function printAllTdText() {
+  const Td = document.getElementsByTagName("td"); 
+  for (let i = 0; i < Td.length; i++) {
+    console.log(Td[i].textContent); 
+  }
+}
+printAllTdText()
 
 /* ESERCIZIO 23
   Scrivi una funzione per aggiungere un background di colore rosso a ogni link all'interno della pagina.
 */
+function addRedBackgroundToLinks() {
+  const links = document.querySelectorAll("a"); 
+  links.forEach(link => {
+    link.style.backgroundColor = "red"; 
+  });
+}
+
+
+addRedBackgroundToLinks();
+
+
+
 
 /* ESERCIZIO 24
   Scrivi una funzione per aggiungere un nuovo elemento alla lista non ordinata con id "myList".
 */
+function addListItem() {
+  const myList = document.getElementById("myList"); 
+  const newItem = document.createElement("li"); 
+  newItem.innerText = "piscina"; 
+  myList.appendChild(newItem); 
+}
+
+addListItem();
+
+
 
 /* ESERCIZIO 25
   Scrivi una funzione per svuotare la lista non ordinata con id "myList".
 */
+function clearList() {
+  const myList = document.getElementById("myList"); 
+  myList.innerText = ""; 
+
+}
+clearList();
+
+
 
 /* ESERCIZIO 26
   Scrivi una funzione per aggiungere ad ogni tag <tr> la classe CSS "test"
 */
+function addClassToTr() {
+  const rows = document.getElementsByTagName("tr");
+  for (let i = 0; i < rows.length; i++) {
+    rows[i].className = "test"; 
+  }
+}
+
+
+addClassToTr();
+
 
 
 
